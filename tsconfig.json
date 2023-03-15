@@ -4,9 +4,11 @@
     "isolatedModules": true,
     "target": "ESNext",
     "strict": true,
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
   "include": [
-    "./src"
+    "src"
   ],
   "exclude": [
     "node_modules"

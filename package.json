@@ -7,8 +7,10 @@
   "repository": "git@github.com:lowbits/tafee-js-client.git",
   "author": "Tobias <hallo@tobiaslobitz.de>",
   "license": "MIT",
-  "main": "./dist/js-client.mjs",
+  "main": "dist/index.mjs",
   "source": "src/index.ts",
+  "types": "types/index.d.ts",
+  "typings": "types/index.d.ts",
   "scripts": {
     "lint": "eslint --max-warnings=0 './src/**/*.{ts,js}'",
     "prettier": "prettier './**/*.js' './src/**/*.ts' './**/*.md' --write",
@@ -17,6 +19,11 @@
     "test": "vitest run",
     "prepare": "npm run build"
   },
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.2",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
