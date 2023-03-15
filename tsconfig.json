@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "isolatedModules": true,
+    "target": "ESNext",
+    "strict": true,
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "@tsconfig/recommended/tsconfig.json"
+}
