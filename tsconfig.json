@@ -2,16 +2,20 @@
   "compilerOptions": {
     "module": "CommonJS",
     "isolatedModules": true,
+    "esModuleInterop": true,
     "target": "ESNext",
     "strict": true,
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./types"
   },
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "include": [
     "src"
   ],
   "exclude": [
     "node_modules"
   ],
-  "extends": "@tsconfig/recommended/tsconfig.json"
 }
