@@ -1,2 +1,3 @@
 # tafee-js-client
-A javascript client to connect with tafee 
+
+A javascript client to connect with tafee

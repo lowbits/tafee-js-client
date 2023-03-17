@@ -13,7 +13,7 @@
   "typings": "types/index.d.ts",
   "scripts": {
     "lint": "eslint --max-warnings=0 './src/**/*.{ts,js}'",
-    "prettier": "prettier './**/*.js' './src/**/*.ts' './**/*.md' --write",
+    "prettier": "prettier './src/**/*.ts' './**/*.md' --write",
     "build": "vite build && tsc",
     "watch": "vite build --watch && tsc",
     "demo": "vite serve playground",
