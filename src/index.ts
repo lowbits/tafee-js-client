@@ -1,28 +1,31 @@
-type FeeFormResponse = Record<any, number>;
+import Api from "./api";
+
+interface FeeForm {
+    name: string
+}
+
+type FeeFormsResponse = [FeeForm[], number];
 
 class Tafee {
-    private readonly baseUrl = "https://tafee-service.onrender.com/api";
-    private readonly headers: Headers;
     private readonly slug: string
-    private readonly client: typeof fetch
+    private readonly client: Api
 
     public constructor(config: { slug: string }) {
+        const baseUrl = "https://api.tax.integration.lowbits.de/api";
         this.slug = config.slug
 
-        const headers = new Headers()
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'x-tenant-id': this.slug
+        })
 
-        headers.set('Content-Type', 'application/json')
-        headers.set('Accept', 'application/json')
-        headers.set('x-tenant-id', this.slug)
-
-        this.headers = headers
-
-
-        this.client = (input, args) => fetch(`${this.baseUrl}${input}`, {headers, ...args})
+        console.log("Headers in index", headers)
+        this.client = new Api({baseUrl, headers});
     }
 
-    public async getFeeForms(): Promise<Response> {
-        return await this.client('/fee-form')
+    public async getFeeForms() {
+        return await this.client.get<FeeFormsResponse>('/fee-form')
     }
 }
 
